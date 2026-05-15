@@ -1,0 +1,196 @@
+
+:root{
+    --dark-color: #0a0a0a;
+    --golden-color: #fbc85d;
+    --golden-dark-color: #c48b3e;
+    --gray-dark-color: #1e1e1e;
+    --star-color: #5c3e84;
+    --shunning-color: #f2f2f2;
+    --moder-green-color: #118a7e;
+}
+
+body{
+    background-image: linear-gradient(to right, var(--dark-color), var(--gray-dark-color)) ;
+    direction: rtl;
+}
+/* Begin Navbar */
+.navbar{
+    background-color: var(--dark-color) !important;
+    border-bottom: 1px solid var(--golden-color) !important;
+    position: sticky !important;
+    top: 0;
+    z-index: 1000;
+}
+.navbar .navbar-toggler{
+    background-color: var(--golden-dark-color);
+}
+.navbar .nav-link{
+    color: #fff !important;
+    margin: 0px 10px;
+    position: relative;
+}
+.navbar .nav-link::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background-color: var(--golden-color);
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translate(-50%, 50%);
+    transition: all 0.3s ease;
+}
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after{
+    width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+        .navbar .nav-link{
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 7px;
+            transition: all 0.3s ease;
+        }
+        .navbar .nav-link.active,
+        .navbar .nav-link:hover{
+            background-color: var(--golden-dark-color);
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 7px;
+        }
+        .navbar .nav-link::after{
+        content: '';
+        width: 0;
+        height: 0;
+        
+    }
+}
+/* End Navbar */
+
+/* Begin Main Content */
+
+.container{
+    color: #fff;
+}
+/* Begin Hook Section */
+.container .hook{
+    margin: 100px 0;
+    padding: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+.container .hook .contact-btn{
+    background-color: var(--golden-dark-color);
+    border: 1px solid var(--golden-dark-color);
+    transition: all 0.3s ease;
+}
+.container .hook .contact-btn:hover{
+    background-color: var(--gray-dark-color);
+    box-shadow: 0 0 10px var(--golden-color);
+    
+}
+/* End Hook Section */
+
+/* Begin Services Section */
+
+.services{
+    display: flex;
+    justify-content: center;
+}
+.service-title{
+    color: var(--golden-color);
+    margin-bottom: 30px;
+    position: relative;
+}
+.service-title::after{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: var(--golden-color);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+}
+
+.card{
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background-color: var(--gray-dark-color);
+    background-image: radial-gradient(circle, var(--gray-dark-color), var(--gray-dark-color));
+    border: none;
+    border-radius: 20px;
+    transition: 0.3s ease;
+    margin: 10px;
+    padding: 20px;
+    cursor: pointer;
+    } 
+.card::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, var(--moder-green-color),  var(--star-color));
+    opacity: 0;
+    transition: 0.5s ease;
+    z-index: -1;
+}
+
+.card:hover{
+    box-shadow: 0 0 10px var(--star-color);
+    background-image: radial-gradient(circle, var(--moder-green-color),  var(--star-color));
+}
+.card:hover::before{
+    opacity: 1;
+}
+.services .card svg{
+    width: 50px;
+    height: 50px;
+    color: var(--golden-color);
+    margin-bottom: 20px;
+}
+
+/* End Services Section */
+
+/* Begin Projects Section */
+
+.projects{
+    margin: 100px 0;
+    padding: 0;
+}
+.project-name{
+    color: #eee;
+    /* margin: 30px 0; */
+    position: relative;
+    padding: 10px ;
+    background-color: var(--golden-dark-color);
+    border-radius: 7px 7px 0 0;
+    width: 100%;
+    text-align: center;
+}
+.projects .card{
+    margin: 0;
+    margin-bottom: 30px ;
+    padding: 10px;
+    height: 500px;
+    width: 100%;
+    display: flex;
+    border-radius: 0 0 7px 7px;
+    justify-content: center;
+    align-items: center;
+}
+.projects .card img{
+    /* filter: scale(0.5); */
+    max-width: 600px;
+}
+/* End Projects Section */
+
+/* End Main Content */
