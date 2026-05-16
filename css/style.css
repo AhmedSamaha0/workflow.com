@@ -7,7 +7,13 @@
     --star-color: #5c3e84;
     --shunning-color: #f2f2f2;
     --moder-green-color: #118a7e;
+    --map-color: #e55e5e;
+    --facebook-color: #1877f2;
+    --email-color: #ea4335; 
+    --whatsApp-color: #25d366;
+    
 }
+
 
 body{
     background-image: linear-gradient(to right, var(--dark-color), var(--gray-dark-color)) ;
@@ -15,10 +21,11 @@ body{
 }
 /* Begin Navbar */
 .navbar{
+    width: 100%;
     background-color: var(--dark-color) !important;
     border-bottom: 1px solid var(--golden-color) !important;
-    position: sticky !important;
-    top: 0;
+    position: fixed !important;
+    top: 0; left: 0; right: 0;
     z-index: 1000;
 }
 .navbar .navbar-toggler{
@@ -165,32 +172,149 @@ body{
 .projects{
     margin: 100px 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .project-name{
     color: #eee;
-    /* margin: 30px 0; */
     position: relative;
     padding: 10px ;
     background-color: var(--golden-dark-color);
     border-radius: 7px 7px 0 0;
-    width: 100%;
     text-align: center;
+    max-width: 800px;
+
 }
 .projects .card{
     margin: 0;
+    padding: 0;
     margin-bottom: 30px ;
-    padding: 10px;
-    height: 500px;
-    width: 100%;
-    display: flex;
+    aspect-ratio: 4 / 3;
     border-radius: 0 0 7px 7px;
-    justify-content: center;
-    align-items: center;
+    max-width: 800px;
+    text-align: center;
 }
 .projects .card img{
-    /* filter: scale(0.5); */
-    max-width: 600px;
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
 }
 /* End Projects Section */
+
+/* Begin Panar Section */
+
+.panar{
+    /* background-color: var(--dark-color); */
+    margin-bottom: 100px;
+}
+.panar .panar-img{
+    background-image: url('../images/panar.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    border-radius: 10px;
+}
+@media screen and (max-width: 992px){
+    .panar {
+        margin-bottom: 50px;
+    }
+    .panar .panar-img{
+        height: 200px;
+    }
+}
+@media screen and (max-width: 576px){
+    .panar {
+        margin-bottom: 30px;
+    }
+    .panar .panar-img{
+        height: 150px;
+    }
+}
+/* End Panar Section */
+
+/* Begin Contact Section */
+
+.contact{
+    background-color: var(--dark-color);
+    border: 1px solid var(--golden-color) ;
+    border-radius: 10px;
+    padding: 40px;
+    margin-bottom: 100px;
+}
+.contact .contact-title{
+    color: var(--golden-color);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+.contact .contact-text{
+    color: #eee;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+.contact .address{
+    color: #eee;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+.contact .address a{
+    color: #eee;
+    text-decoration: none;
+    padding: 6px;
+    border-radius: 7px;
+    transition: all 0.3s ease;
+}
+.contact .address a:hover{
+    box-shadow: 0 0 10px var(--golden-color);
+    background-color: var(--gray-dark-color);
+}
+.contact .address svg{
+    color: var(--map-color);
+    margin-left: 5px;
+    font-size: 28px;
+    text-shadow: 0 0 50px var(--map-color);
+}
+.contact .contact-info .facebook,
+.contact .contact-info .phone,
+.contact .contact-info .email
+{
+    color: #eee;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+.contact .contact-info .facebook svg,
+.contact .contact-info .phone svg,
+.contact .contact-info .email svg{
+    margin-left: 10px;
+}
+.contact .contact-info .facebook svg{
+    color: var(--facebook-color);
+}
+.contact .contact-info .phone svg{
+    color: var(--whatsApp-color);
+}
+.contact .contact-info .email svg{
+    color: var(--email-color);
+}
+@media screen and (max-width: 576px) {
+    .contact{
+        padding: 20px;
+        margin-bottom: 0;
+    }
+    .contact .contact-info .facebook,
+.contact .contact-info .phone,
+.contact .contact-info .email
+{
+    font-size: 18px;
+}
+}
+/* End Contact Section */
 
 /* End Main Content */
