@@ -200,6 +200,25 @@ body{
     height: inherit;
     object-fit: cover;
 }
+.carousel-indicators{
+    background-color: var(--dark-color) !important;
+    border-radius: 30px;
+}
+.carousel-indicators button{
+    background-color: var(--golden-dark-color) !important;
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.projects .carousel-control-prev-icon,
+.projects .carousel-control-next-icon{
+    background-color: var(--dark-color);
+    color: var(--golden-dark-color);
+    padding: 20px ;
+    border-radius: 10px;
+}
 /* End Projects Section */
 
 /* Begin Panar Section */
