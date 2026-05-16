@@ -216,8 +216,23 @@ body{
 .projects .carousel-control-next-icon{
     background-color: var(--dark-color);
     color: var(--golden-dark-color);
-    padding: 20px ;
+    padding: 10px ;
     border-radius: 10px;
+}
+@media screen and (max-width: 576px) {
+    .projects .carousel-control-prev-icon,
+    .projects .carousel-control-next-icon{
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    .carousel-indicators button{
+        background-color: var(--golden-dark-color) !important;
+        width: 8px !important;
+        height: 8px !important;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+    }    
 }
 /* End Projects Section */
 
